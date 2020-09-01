@@ -1,0 +1,441 @@
+#通用Host
+host: 'http://api.app.33reading.cn'
+#登录接口
+login:
+    url: /app/1/user/sign/loginp
+    request:
+       mobile: '15210881156'
+       password: '111111'
+    validate:
+       status: 200
+#我的消息接口
+mynotice:
+    url: /app/1/user/person/info/notice?pageSize=10&currentPage=0
+    validate:
+       status: 200
+#未读消息接口
+unread:
+    url: /app/1/user/person/info/unRead
+    validate:
+       status: 200
+#首页banner接口
+banner:
+    url: /app/1/banner/list
+    validate:
+       status: 200
+#获取版本号
+getversion:
+    url: /app/1/sys/version
+    request:
+        os: 'IOS'
+    validate:
+       status: 200
+#获取
+getarticles:
+    url: /app/1/sys/getSysarticles
+    request:
+      type: '4'
+    validate:
+       status: 200
+#购买VIP接口
+mybuyVip:
+    url: /app/1/user/person/info/buyVip
+    validate:
+       status: 200
+#我的收藏接口
+myFavourites:
+    url: /app/1/user/person/info/myFavourites
+    request:
+       pageSize: "1"
+       currentPage: "1"
+       type: "3"
+    validate:
+       status: 200
+#我的个人信息接口
+myinfo:
+    url: /app/1/user/person/info/details
+    validate:
+       status: 200
+#我的课程
+mylessions:
+    url: /app/1/study/typeList
+    request:
+       type: '2'
+    validate:
+       status: 200
+#我的订单
+myorder:
+    url: /app/1/user/person/info/myOrder
+    request:
+        pageSize: 10
+        currentPage: 0
+    validate:
+       status: 200
+#我的记录
+myrecord:
+    url: /app/1/ttr/report/queryReport
+    validate:
+       status: 200
+#我的测试记录
+mytestrecord:
+    url: /app/1/ttr/report/queryTestRecord
+    validate:
+       status: 200
+#我的个人信息
+mypersonalinfo:
+    url: /app/1/user/person/show
+    validate:
+       status: 200
+#查询绑定信息
+querybind:
+    url: /app/1/user/sign/queryBindStatus
+    request:
+       openId: "oYyNX0XEmz9waSPXOtbmWMj3BvRo"
+       type: "3"
+    validate:
+       status: 200
+#查询偏好
+mypreferall:
+    url: /app/1/user/prefer/list
+    validate:
+       status: 200
+#查询我的偏好
+mypreferlist:
+    url: /app/1/user/person/prefer/list
+    validate:
+       status: 200
+#我的偏好增加
+mypreferadd:
+    url: /app/1/user/person/prefer/add
+    request:
+       preferId: 6548114c-4cd5-4b2b-b310-770cf16f6885
+    validate:
+       status: 200
+#我的偏好删除
+mypreferdel:
+    url: /app/1/user/person/prefer/edit
+    request:
+         preferId: 6548114c-4cd5-4b2b-b310-770cf16f6885
+    validate:
+       status: 200
+#查询我的积分
+myjifen:
+    url: /app/1/user/person/info/points?pageSize=10&currentPage=0
+    validate:
+       status: 200
+#意见反馈
+feedback:
+    url: /app/1/user/feedback/add
+    request:
+         feedback: '好用吗'
+    validate:
+       status: 200
+#上传头像
+uploadphoto:
+    url: /app/1/user/person/info/uploadPhoto
+    request:
+         file: ("111.png", open("D:\\JingWei\\111.png", "rb"), "image/jpeg")
+    validate:
+       status: 200
+#我的学习模块
+studylist:
+    url: /app/1/study/typeList
+    request:
+         type: 1
+    validate:
+       status: 200
+#学习模块-更多
+studymore:
+    url: /app/1/study/courseList
+    request:
+         courseType: 1
+    validate:
+       status: 200
+#学习模块-切换
+studylessionswitch:
+    url: /app/1/study/courseList
+    request:
+         courseType: 1
+         id:
+    validate:
+       status: 200
+#首页
+homelist:
+    url: /app/1/home/list
+    validate:
+       status: 200
+#我的学习包
+mystudypackage:
+    url: /app/1/ttr/getPackage
+    request:
+         courseType: 1
+         id:
+    validate:
+       status: 200
+#学习包支付
+paypackage:
+    url: /app/1/ttr/payPackage
+    request:
+         courseType: 1
+         id:
+    validate:
+       status: 200
+#阅读偏好测试
+prefertest:
+    url: /app/1/ttr/prefer/question/list
+    request:
+         token:
+    validate:
+       status: 200
+#书单
+booklist:
+    url: /app/1/bk/book/list?pageSize=10&currentPage=0
+    request:
+         blMin: 1.4
+         blMax: 1.5
+    validate:
+       status: 200
+#书单详情
+bookdetails:
+    url: /app/1/bk/book/details?id=d3e7b706-b531-11ea-a24d-00163e10bc8a
+    request:
+         id: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+       status: 200
+#书单测试
+booktest:
+    url: /app/1/bk/quiz/add
+    request:
+        quizId: "d3e7b706-b531-11ea-a24d-00163e10bc8a"
+        questionId: ""
+        answerId: ""
+        quizTime: ""
+        finishDate: ""
+    validate:
+       status: 200
+#书单测试结果
+bookresdetails:
+    url: /app/1/bk/quiz/details
+    request:
+         quizId: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+       status: 200
+#我的书架
+bookrack:
+    url: /app/1/book/case/list?pageSize=10&currentPage=0
+    request:
+         isTest: 1
+    validate:
+       status: 200
+#书架添加
+rackadd:
+    url: /app/1/book/case/add
+    request:
+         bookId: 31c6bf3d-b53d-11ea-a24d-00163e10bc8a
+    validate:
+       status: 200
+#书单主题
+themelist:
+    url: /app/1/bk/book/themeList
+    validate:
+       status: 200
+#书单测试报告
+bookreport:
+    url: /app/1/bk/quiz/report
+    request:
+         id: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+       status: 200
+#书架状态更新
+bookstatus:
+    url: /app/1/bk/quiz/status
+    request:
+         quizId: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+         status: 200
+#阅读课列表
+readlist:
+    url: /app/1/course/read/list
+    request:
+         suggestGrade: 1
+    validate:
+         status: 200
+#阅读课详情
+readdetails:
+    url: /app/1/course/read/details
+    request:
+         id: e8e2b92c-5ee0-4872-a0de-86dcfaff4292
+    validate:
+         status: 200
+#阅读课测试
+readtest:
+    url: /app/1/read/quiz/submit
+    request:
+         quizId: d3e7b706-b531-11ea-a24d-00163e10bc8a
+    validate:
+         status: 200
+
+#阅读课测试结果
+readtestdetails:
+    url: /app/1/read/quiz/details
+    request:
+         courseId: f43c9500-98ac-49c2-b199-fff8ea43e317
+    validate:
+         status: 200
+
+#阅读课收藏
+readfavourite:
+    url: /app/1/course/read/favourites/add
+    request:
+         courseId: f43c9500-98ac-49c2-b199-fff8ea43e317
+    validate:
+         status: 200
+
+#阅读课购买
+buyread:
+    url: /app/1/course/read/buyRead
+    request:
+         commodityId: f43c9500-98ac-49c2-b199-fff8ea43e317
+    validate:
+         status: 200
+
+#阅读课报告
+readreport:
+    url: /app/1/bk/quiz/report
+    request:
+         id: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+         status: 200
+#阅读课状态更新
+readstatusupdate:
+    url: /app/1/bk/quiz/status
+    request:
+         quizId: 9d3b20f0-b53d-11ea-a24d-00163e10bc8a
+    validate:
+         status: 200
+#主题课列表
+lecturelist:
+    url: /app/1/course/lecture/list
+    request:
+         grade: 1.4
+    validate:
+         status: 200
+#主题课详情
+lecturedetails:
+    url: /app/1/course/lecture/details
+    request:
+         id:
+    validate:
+         status: 200
+#主题课购买
+buylecture:
+    url: /app/1/course/lecture/buyLecture
+    request:
+         commodityId:
+    validate:
+         status: 200
+
+#主题课收藏
+lecturefavourites:
+    url: /app/1/course/lecture/favourites/add
+    request:
+         courseId:
+    validate:
+         status: 200
+#词汇课列表
+wordlist:
+    url: /app/1/course/word/list
+    request:
+         grade: 1
+    validate:
+         status: 200
+#词汇课详情
+worddetails:
+    url: /app/1/course/word/details?id=1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    request:
+         id: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课详情
+wordtestadd:
+    url: /app/1/words/quiz/submit
+    request:
+         id: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课测试结果
+wordresult:
+    url: /app/1/words/quiz/details
+    request:
+         id: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课收藏
+wordfavourites:
+    url: /app/1/course/words/favourites/add
+    request:
+         courseId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课购买
+wordbuy:
+    url: /app/1/course/word/buyWords
+    request:
+         commodityId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课测试报告
+wordreport:
+    url: /app/1/course/word/report
+    request:
+         courseId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#词汇课状态
+wordtatus:
+    url: /app/1/words/quiz/status
+    request:
+         quizId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+
+#阅读课分享
+readshare:
+    url: /app/1/page/share/courseread/79593b53-917f-4f74-96c6-bb10278944de
+    request:
+         quizId:
+    validate:
+         status: 200
+#词汇课分享
+wordshare:
+    url: /app/1/page/share/courseword/1e1df89a-afa2-11ea-a98d-3497f6280d0b
+    request:
+         quizId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#主题课分享
+lectureshare:
+    url: /app/1/page/share/courselecture/5dbefc0f-517a-4a55-bf9a-e72bb3b6eb09
+    request:
+         quizId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+
+#报告分享
+reportshare:
+    url: /app/1/page/share/share_quizreport/0b4bc8ea-e5c5-4995-8be2-753436c81b66
+    request:
+         quizId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+#书单分享
+bookshare:
+    url: /app/1/page/share/book/e12e47b0-a896-11ea-8e21-3497f6280d0b
+    request:
+         quizId: 1e1df8f0-afa2-11ea-a98d-3497f6280d0b
+    validate:
+         status: 200
+
+
+
+
